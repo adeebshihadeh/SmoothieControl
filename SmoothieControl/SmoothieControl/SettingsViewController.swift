@@ -17,8 +17,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ip = userDefaults.stringForKey("ip")!
-        ipField.text = "\(ip)"
+        var restoreIP = userDefaults.stringForKey("ip")
+        if (restoreIP != nil){
+            ipField.text = "\(restoreIP)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,32 +30,46 @@ class SettingsViewController: UIViewController {
     @IBAction func setIP(sender: AnyObject) {
         var ipAddress: String = ipField.text
         userDefaults.setObject(ipAddress, forKey: "ip")
+        ip = userDefaults.stringForKey("ip")!
+        
+        //dismiss keyboard
+        self.view.endEditing(true)
     }
     
     @IBAction func testConnection(sender: AnyObject) {
-        //save IP address if text field is changed
         userDefaults.setObject(ipField.text, forKey: "ip")
-        ip = userDefaults.stringForKey("ip")!
         
-        var command = "M501\n:"
-        println("ip:\(ip)\ncommand:\n\(command)")
-        
-        //send POST request with command
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://\(ip)/command")!)
-        request.HTTPMethod = "POST"
-        
-        var requestBodyData: NSData = (command as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
-        
-        request.addValue((String(countElements(command))), forHTTPHeaderField: "Content-Length")
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        request.HTTPBody = requestBodyData
-        
-        var connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
-        
-        println("sending POST request")
-        
-        connection?.start()
+        if let ipAddress: AnyObject = userDefaults.objectForKey("ip") {
+            //save IP address if text field is changed
+            
+            
+            var command = "M501\n:"
+            println("ip:\(ip)\ncommand:\n\(command)")
+            
+            //send POST request with command
+            var request = NSMutableURLRequest(URL: NSURL(string: "http://\(ip)/command")!)
+            request.HTTPMethod = "POST"
+            
+            var requestBodyData: NSData = (command as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+            
+            request.addValue((String(countElements(command))), forHTTPHeaderField: "Content-Length")
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.HTTPBody = requestBodyData
+            
+            var connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+            
+            println("sending POST request")
+            
+            connection?.start()
+        }else {
+            let alert = UIAlertView()
+            alert.title = "Set IP address"
+            alert.message = "An IP address must be set so SmoothieControl knows where to send your command."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+        //dimsiss keyboard
+        self.view.endEditing(true)
     }
     
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
