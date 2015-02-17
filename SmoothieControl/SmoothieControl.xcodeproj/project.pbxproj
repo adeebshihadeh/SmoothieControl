@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */; };
+		BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */; };
 		BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBB4721A931F0900FD06C4 /* AppDelegate.swift */; };
-		BECBB4751A931F0900FD06C4 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBB4741A931F0900FD06C4 /* TerminalViewController.swift */; };
-		BECBB4771A931F0900FD06C4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBB4761A931F0900FD06C4 /* SettingsViewController.swift */; };
 		BECBB47A1A931F0900FD06C4 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECBB4781A931F0900FD06C4 /* iPhone.storyboard */; };
 		BECBB47C1A931F0900FD06C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECBB47B1A931F0900FD06C4 /* Images.xcassets */; };
 		BECBB47F1A931F0900FD06C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECBB47D1A931F0900FD06C4 /* LaunchScreen.xib */; };
@@ -27,11 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
+		BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BECBB46D1A931F0900FD06C4 /* SmoothieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECBB4711A931F0900FD06C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECBB4721A931F0900FD06C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BECBB4741A931F0900FD06C4 /* TerminalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
-		BECBB4761A931F0900FD06C4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BECBB4791A931F0900FD06C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		BECBB47B1A931F0900FD06C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BECBB47E1A931F0900FD06C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				BECBB4721A931F0900FD06C4 /* AppDelegate.swift */,
-				BECBB4741A931F0900FD06C4 /* TerminalViewController.swift */,
-				BECBB4761A931F0900FD06C4 /* SettingsViewController.swift */,
+				BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */,
+				BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */,
 				BECBB4781A931F0900FD06C4 /* iPhone.storyboard */,
 				BECBB47B1A931F0900FD06C4 /* Images.xcassets */,
 				BECBB47D1A931F0900FD06C4 /* LaunchScreen.xib */,
@@ -215,9 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BECBB4771A931F0900FD06C4 /* SettingsViewController.swift in Sources */,
 				BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */,
-				BECBB4751A931F0900FD06C4 /* TerminalViewController.swift in Sources */,
+				BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */,
+				BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +413,7 @@
 				BECBB4901A931F0900FD06C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BECBB4911A931F0900FD06C4 /* Build configuration list for PBXNativeTarget "SmoothieControlTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				BECBB4931A931F0900FD06C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

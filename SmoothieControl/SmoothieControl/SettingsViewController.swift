@@ -10,16 +10,23 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var ipField: UITextField!
+    var userDefaults = NSUserDefaults.standardUserDefaults()
+    var ip: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ip = userDefaults.stringForKey("ip")!
+        ipField.text = "\(ip)"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func setIP(sender: AnyObject) {
+        var ipAddress: String = ipField.text
+        userDefaults.setObject(ipAddress, forKey: "ip")
+    }
 }
-

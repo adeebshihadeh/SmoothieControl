@@ -10,16 +10,45 @@ import UIKit
 
 class TerminalViewController: UIViewController {
 
+    @IBOutlet weak var commandField: UITextField!
+    @IBOutlet weak var terminalOutputView: UITextView!
+    
+    var ip: String = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ip = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //upate IP once user switches to Terminal view
+        ip = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func sendCommand(sender: AnyObject) {
+        var command = "\(commandField.text.capitalizedString)\n:"
+        println("ip:\(ip)\ncommand:\n\(command)")
+        
+        //send POST request with command
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://\(ip)/command")!)
+        request.HTTPMethod = "POST"
+        
+        var requestBodyData: NSData = (command as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+        
+        request.addValue((String(countElements(command))), forHTTPHeaderField: "Content-Length")
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-
+        request.HTTPBody = requestBodyData
+        
+        var connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+        
+        println("sending POST request")
+        
+        connection?.start()
+    }
 }
-
