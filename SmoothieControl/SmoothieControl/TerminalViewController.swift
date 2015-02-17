@@ -15,6 +15,7 @@ class TerminalViewController: UIViewController {
     
     var ip: String = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
     var userDefaults = NSUserDefaults.standardUserDefaults()
+    var terminalOutput: NSString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +55,17 @@ class TerminalViewController: UIViewController {
     }
     
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
-        //New request so we need to clear the data object
+
         println(response)
-        
-        if let httpResponse = response as? NSHTTPURLResponse {
-            println("error \(httpResponse.statusCode)")
-        }
+    }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        terminalOutput = NSString(data: data, encoding: NSUTF8StringEncoding)!
+        println(terminalOutput)
+        terminalOutputView.text = "\(terminalOutputView.text)\n\(terminalOutput)"
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 }

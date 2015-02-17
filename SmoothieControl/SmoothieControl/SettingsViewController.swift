@@ -57,8 +57,7 @@ class SettingsViewController: UIViewController {
     }
     
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
-        //New request so we need to clear the data object
-        println(response)
+        
         let httpResponse = response as? NSHTTPURLResponse
         
         let alert = UIAlertView()
@@ -84,4 +83,7 @@ class SettingsViewController: UIViewController {
         alert.show()
     }
 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 }
