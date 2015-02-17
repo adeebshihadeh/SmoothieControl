@@ -14,11 +14,12 @@ class TerminalViewController: UIViewController {
     @IBOutlet weak var terminalOutputView: UITextView!
     
     var ip: String = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
+    var userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ip = NSUserDefaults.standardUserDefaults().stringForKey("ip")!
+        ip = userDefaults.stringForKey("ip")!
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,5 +51,14 @@ class TerminalViewController: UIViewController {
         println("sending POST request")
         
         connection?.start()
+    }
+    
+    func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
+        //New request so we need to clear the data object
+        println(response)
+        
+        if let httpResponse = response as? NSHTTPURLResponse {
+            println("error \(httpResponse.statusCode)")
+        }
     }
 }
