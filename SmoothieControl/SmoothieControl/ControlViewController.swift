@@ -22,9 +22,19 @@ class ControlViewController: UIViewController {
     var jogIncrement = 0.1
     var xyFeedrate = 3000
     var zFeedrate = 200
+    var tempOutput = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let ipAddress: AnyObject = userDefaults.objectForKey("ip") {
+        }else {
+            let alert = UIAlertView()
+            alert.title = "Set IP address"
+            alert.message = "An IP address must be set so SmoothieControl knows where to send your command."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
 
         switch(jogIncrementSegment.selectedSegmentIndex){
             case 0:
@@ -46,7 +56,6 @@ class ControlViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sendCommand(cmd: String){
@@ -79,6 +88,18 @@ class ControlViewController: UIViewController {
             alert.addButtonWithTitle("Ok")
             alert.show()
         }
+    }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        let dataString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+        println("datastring:\(dataString)")
+        if(dataString.containsString("ok T:")){
+            updateTemp(dataString)
+        }
+    }
+    
+    func updateTemp(tempString: String){
+        tempOutputField.text = "\(tempString)"
     }
     
     @IBAction func homeXY(sender: AnyObject) {
@@ -120,6 +141,7 @@ class ControlViewController: UIViewController {
         self.view.endEditing(true);
     }
     @IBAction func getTemp(sender: AnyObject) {
+        sendCommand("M105")
     }
     @IBAction func extrude(sender: AnyObject) {
         
@@ -153,6 +175,7 @@ class ControlViewController: UIViewController {
         xyFeedrate = xyFeedrateField.text.toInt()!
         zFeedrate = zFeedrateField.text.toInt()!
     }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true);
     }
