@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */; };
 		BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */; };
+		BE5CDE2A1A95B62E00ADA440 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */; };
 		BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBB4721A931F0900FD06C4 /* AppDelegate.swift */; };
 		BECBB47A1A931F0900FD06C4 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECBB4781A931F0900FD06C4 /* iPhone.storyboard */; };
 		BECBB47C1A931F0900FD06C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECBB47B1A931F0900FD06C4 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
 		BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		BECBB46D1A931F0900FD06C4 /* SmoothieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECBB4711A931F0900FD06C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECBB4721A931F0900FD06C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				BECBB4721A931F0900FD06C4 /* AppDelegate.swift */,
 				BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */,
 				BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */,
+				BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */,
 				BECBB4781A931F0900FD06C4 /* iPhone.storyboard */,
 				BECBB47B1A931F0900FD06C4 /* Images.xcassets */,
 				BECBB47D1A931F0900FD06C4 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */,
 				BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */,
+				BE5CDE2A1A95B62E00ADA440 /* ControlViewController.swift in Sources */,
 				BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

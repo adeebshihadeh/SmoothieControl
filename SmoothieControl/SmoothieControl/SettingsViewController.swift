@@ -12,14 +12,14 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var ipField: UITextField!
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    var ip: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var restoreIP = userDefaults.stringForKey("ip")
         if (restoreIP != nil){
-            ipField.text = "\(restoreIP)"
+            var ip = userDefaults.stringForKey("ip")!
+            ipField.text = "\(ip)"
         }
     }
 
@@ -30,7 +30,6 @@ class SettingsViewController: UIViewController {
     @IBAction func setIP(sender: AnyObject) {
         var ipAddress: String = ipField.text
         userDefaults.setObject(ipAddress, forKey: "ip")
-        ip = userDefaults.stringForKey("ip")!
         
         //dismiss keyboard
         self.view.endEditing(true)
@@ -40,8 +39,7 @@ class SettingsViewController: UIViewController {
         userDefaults.setObject(ipField.text, forKey: "ip")
         
         if let ipAddress: AnyObject = userDefaults.objectForKey("ip") {
-            //save IP address if text field is changed
-            
+            var ip = userDefaults.stringForKey("ip")!
             
             var command = "M501\n:"
             println("ip:\(ip)\ncommand:\n\(command)")
