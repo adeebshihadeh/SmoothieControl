@@ -16,6 +16,8 @@ class ControlViewController: UIViewController {
     @IBOutlet weak var tempOutputField: UILabel!
     @IBOutlet weak var xyFeedrateField: UITextField!
     @IBOutlet weak var zFeedrateField: UITextField!
+    @IBOutlet weak var feedLengthField: UITextField!
+    @IBOutlet weak var extrudeFeedrateField: UITextField!
     
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var ip = NSUserDefaults.standardUserDefaults().stringForKey("ip")
@@ -23,6 +25,8 @@ class ControlViewController: UIViewController {
     var xyFeedrate = 3000
     var zFeedrate = 200
     var tempOutput = ""
+    var feedLength = 5
+    var eFeedrate = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,11 +148,17 @@ class ControlViewController: UIViewController {
         sendCommand("M105")
     }
     @IBAction func extrude(sender: AnyObject) {
-        
+        feedLength = feedLengthField.text.toInt()!
+        eFeedrate = extrudeFeedrateField.text.toInt()!
+        sendCommand("G91 G0 E\(feedLength) F\(eFeedrate) G90")
+        //dismiss keyboard
         self.view.endEditing(true);
     }
     @IBAction func retract(sender: AnyObject) {
-        
+        feedLength = feedLengthField.text.toInt()!
+        eFeedrate = extrudeFeedrateField.text.toInt()!
+        sendCommand("G91 G0 E\(-feedLength) F\(eFeedrate) G90")
+        //dimsiss keyboard
         self.view.endEditing(true);
     }
     

@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P2t-t8-ydJ">
-                                <rect key="frame" x="87" y="70" width="57" height="30"/>
+                                <rect key="frame" x="84" y="70" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Retract">
@@ -125,8 +125,8 @@
                                     <action selector="retract:" destination="eL7-Fm-XGA" eventType="touchUpInside" id="9dQ-ex-DNd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="center" minimumFontSize="17" id="jQZ-FW-UYL">
-                                <rect key="frame" x="153" y="71" width="71" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="jQZ-FW-UYL">
+                                <rect key="frame" x="147" y="70" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -349,13 +349,28 @@
                                     <action selector="setFeedrate:" destination="eL7-Fm-XGA" eventType="touchUpInside" id="8T0-zd-9Lc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mm/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dHA-WZ-h71">
+                                <rect key="frame" x="257" y="74" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="l9J-MH-IPT">
+                                <rect key="frame" x="210" y="71" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Control" image="Control" id="UOu-0u-P3e"/>
                     <connections>
                         <outlet property="bedTempField" destination="ULY-nR-jOU" id="KH6-hR-wbi"/>
+                        <outlet property="extrudeFeedrateField" destination="l9J-MH-IPT" id="GuA-Ff-Qkv"/>
                         <outlet property="extruderTempField" destination="Mad-MW-3Tr" id="y5g-Hl-ik6"/>
+                        <outlet property="feedLengthField" destination="jQZ-FW-UYL" id="Npm-V3-WyN"/>
                         <outlet property="jogIncrementSegment" destination="0xp-IX-s6U" id="L7s-K8-xK1"/>
                         <outlet property="tempOutputField" destination="ykb-GP-cYg" id="zsA-xd-fIj"/>
                         <outlet property="xyFeedrateField" destination="cmC-pd-dql" id="mMg-nw-3OO"/>
