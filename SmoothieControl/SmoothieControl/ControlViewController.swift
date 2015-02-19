@@ -27,6 +27,8 @@ class ControlViewController: UIViewController {
     var tempOutput = ""
     var feedLength = 5
     var eFeedrate = 100
+    var extruderTemp = 0
+    var bedTemp = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,11 +139,15 @@ class ControlViewController: UIViewController {
         sendCommand("M18")
     }
     @IBAction func setExtruderTemp(sender: AnyObject) {
-        
+        extruderTemp = extruderTempField.text.toInt()!
+        sendCommand("M104 \(extruderTemp)")
+        //dismiss keyboard
         self.view.endEditing(true);
     }
     @IBAction func setBedTemp(sender: AnyObject) {
-        
+        bedTemp = bedTempField.text.toInt()!
+        sendCommand("M140 \(bedTemp)")
+        //dismiss keyboard
         self.view.endEditing(true);
     }
     @IBAction func getTemp(sender: AnyObject) {
