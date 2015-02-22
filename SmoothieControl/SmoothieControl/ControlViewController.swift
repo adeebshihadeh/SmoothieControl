@@ -142,13 +142,13 @@ class ControlViewController: UIViewController {
         extruderTemp = extruderTempField.text.toInt()!
         sendCommand("M104 \(extruderTemp)")
         //dismiss keyboard
-        self.view.endEditing(true);
+        self.view.endEditing(true)
     }
     @IBAction func setBedTemp(sender: AnyObject) {
         bedTemp = bedTempField.text.toInt()!
         sendCommand("M140 \(bedTemp)")
         //dismiss keyboard
-        self.view.endEditing(true);
+        self.view.endEditing(true)
     }
     @IBAction func getTemp(sender: AnyObject) {
         sendCommand("M105")
@@ -158,14 +158,14 @@ class ControlViewController: UIViewController {
         eFeedrate = extrudeFeedrateField.text.toInt()!
         sendCommand("G91 G0 E\(feedLength) F\(eFeedrate) G90")
         //dismiss keyboard
-        self.view.endEditing(true);
+        self.view.endEditing(true)
     }
     @IBAction func retract(sender: AnyObject) {
         feedLength = feedLengthField.text.toInt()!
         eFeedrate = extrudeFeedrateField.text.toInt()!
         sendCommand("G91 G0 E\(-feedLength) F\(eFeedrate) G90")
         //dimsiss keyboard
-        self.view.endEditing(true);
+        self.view.endEditing(true)
     }
     
     @IBAction func jogIncrementChanged(sender: AnyObject) {
@@ -193,6 +193,6 @@ class ControlViewController: UIViewController {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true);
+        self.view.endEditing(true)
     }
 }

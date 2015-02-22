@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */; };
 		BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */; };
+		BE4E9B621A9A469900CCCF92 /* DeltaCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4E9B611A9A469900CCCF92 /* DeltaCalibrationViewController.swift */; };
+		BE4E9B641A9A5EB400CCCF92 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4E9B631A9A5EB400CCCF92 /* CalculatorViewController.swift */; };
+		BE4E9B661A9A661F00CCCF92 /* Smoothie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4E9B651A9A661F00CCCF92 /* Smoothie.swift */; };
 		BE5CDE2A1A95B62E00ADA440 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */; };
 		BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBB4721A931F0900FD06C4 /* AppDelegate.swift */; };
 		BECBB47A1A931F0900FD06C4 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECBB4781A931F0900FD06C4 /* iPhone.storyboard */; };
@@ -30,6 +33,9 @@
 /* Begin PBXFileReference section */
 		BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
 		BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE4E9B611A9A469900CCCF92 /* DeltaCalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeltaCalibrationViewController.swift; sourceTree = "<group>"; };
+		BE4E9B631A9A5EB400CCCF92 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		BE4E9B651A9A661F00CCCF92 /* Smoothie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smoothie.swift; sourceTree = "<group>"; };
 		BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		BECBB46D1A931F0900FD06C4 /* SmoothieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECBB4711A931F0900FD06C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				BE3734B41A9323D200B11CE3 /* TerminalViewController.swift */,
 				BE3734B61A9323D800B11CE3 /* SettingsViewController.swift */,
 				BE5CDE291A95B62E00ADA440 /* ControlViewController.swift */,
+				BE4E9B611A9A469900CCCF92 /* DeltaCalibrationViewController.swift */,
+				BE4E9B631A9A5EB400CCCF92 /* CalculatorViewController.swift */,
+				BE4E9B651A9A661F00CCCF92 /* Smoothie.swift */,
 				BECBB4781A931F0900FD06C4 /* iPhone.storyboard */,
 				BECBB47B1A931F0900FD06C4 /* Images.xcassets */,
 				BECBB47D1A931F0900FD06C4 /* LaunchScreen.xib */,
@@ -220,7 +229,10 @@
 			files = (
 				BECBB4731A931F0900FD06C4 /* AppDelegate.swift in Sources */,
 				BE3734B51A9323D200B11CE3 /* TerminalViewController.swift in Sources */,
+				BE4E9B661A9A661F00CCCF92 /* Smoothie.swift in Sources */,
 				BE5CDE2A1A95B62E00ADA440 /* ControlViewController.swift in Sources */,
+				BE4E9B621A9A469900CCCF92 /* DeltaCalibrationViewController.swift in Sources */,
+				BE4E9B641A9A5EB400CCCF92 /* CalculatorViewController.swift in Sources */,
 				BE3734B71A9323D800B11CE3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
